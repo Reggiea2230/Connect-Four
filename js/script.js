@@ -1,8 +1,8 @@
 
+/*----- constants -----*/
 
 
-
-// app State Variables ///
+/*----- app's state (variables) -----*/
 let player;
 let winner;
 let playeTwo;
@@ -19,18 +19,18 @@ let gameBoard =[
 
 ]
 
-//        Cached element reference  //
+/*----- cached element references -----*/
 const board = document.querySelector('.board');
 const reset = document.querySelector('#reset');
 const startEl = document.querySelector('#start');
 
 
 
-/// Event Listner
+/*----- event listeners -----*/
 
 board.addEventListener('click', function(e){
     console.log(e.target.id)
 })
 
 
-// Functions //
+/*----- functions -----*/
