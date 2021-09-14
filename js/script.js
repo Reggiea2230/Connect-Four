@@ -45,6 +45,8 @@ if (e.target.tagName === 'DIV'){
 
 });
 
+
+
 document.querySelector('button')
 	.addEventListener('click', reset);
 
