@@ -15,7 +15,7 @@ h1 {
 }
 #board {
      border: 5px solid; 
-     background-color: blue;  
+     background-color: black;  
      display: grid;
      grid-template-columns: repeat(6, 100px);
      grid-template-rows: 100px 100px 100px;
