@@ -76,9 +76,9 @@ function checkGameTurn(){
 }
 // when increment our  
 
-for (let i=0; i<41;i++){
-    let div =
-}
+// //for (let i=0; i<41;i++){
+//     let div =
+// }
 
 
 // counter % 2 returns true or false
