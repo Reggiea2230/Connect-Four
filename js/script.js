@@ -20,6 +20,7 @@ gameBoard =[
     [null, null, null, null, null, null, null],
 
 ]
+render()
 }
 /*----- cached element references -----*/
 const board = document.getElementById('board');
@@ -32,11 +33,19 @@ const places = document.getElementsByClassName('places');
 /*----- event listeners -----*/
 
 board.addEventListener('click', function(e){
-    console.log(e.target)
-    console.log(e.target.tagName)
-})
+    /*console.log(e.target.tagName)*/
 
 
+if (e.target.tagName === 'DIV'){
+    e.target.style.backgroundColor ='red';
+    console.log(e.target, "This works" )
+}else {
+    console.log(e.target, "did not work")
+}
 
+});
+
+document.querySelector('button')
+	.addEventListener('click', reset);
 
 /*----- functions -----*/
