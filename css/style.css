@@ -13,77 +13,77 @@ h1 {
 #p2 {
        float: right;
 }
+#buttonTwo{
+       margin: auto;
+}
 #board {
      border: 5px solid; 
      background-color: black;  
      display: grid;
      grid-template-columns: repeat(6, 100px);
-     grid-template-rows: 100px 100px 100px;
-  /*   grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw;
+     grid-template-rows: 100px 100px 100px; 
+    /* grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw;
      grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh; */
-     width: 710px;
+     width: 820px;
      text-align: center;
      margin: auto;
-
+     column-gap: 2%;
 }
 
 
 #colOne {
-       grid-column: 1/ 2;
-       grid-row: 1/7;
-       border: 0px solid black;
-       
+       grid-column: 1/2;
+       grid-row: 1/7;      
 }
 
 #colTwo{
        grid-column: 2/3;
        grid-row: 1/7;
-       border: 0px solid black;
+       
 }
 
 #colThree {
        grid-column: 3/4;
        grid-row: 1/7;
-       border: 0px solid black;
+       
 
 }
 
 #colFour{
        grid-column: 4/5;
        grid-row: 1/7;
-       border: 0px solid black;
+       
 }
 
 #colFive{
        grid-column: 5/6;
        grid-row: 1/7;
-       border: 0px solid black;
+       
 }
 
 #colSix{
        grid-column: 6/7;
        grid-row: 1/7;
-       border: 0px solid black;
+       
 }
 
 #colSeven{
        grid-column: 7/8;
        grid-row: 1/7;
-       border: 0px solid black;
+       
 }
 
 
 .tile {
-       height: 10vh;
-       width: 10vw;
+       height: 9.5vh;
+       width: 6vw;
        border: 0px solid black;
        background-color: white;
-       border-radius: 50%;
-       padding: 5px 5px 15px 5px;
+       border-radius: 47%;
        
 }
 main {
-       justify-content: center;
+      float: left
 }
 
 /*.blue {

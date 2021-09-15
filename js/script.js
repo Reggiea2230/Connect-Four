@@ -5,9 +5,14 @@
 /*----- app's state (variables) -----*/
 let player;
 let winner;
-let playeTwo;
+let playerTwo;
 let reset;
 let gameBoard;
+let color = {
+    'null': 'white',
+    '1': 'red',
+   '-1': 'blue'
+}
 let gameTotal = 0;
 let winningWay = [
 
@@ -27,23 +32,37 @@ let winningWay = [
     [39, 33, 27, 21], [39, 32, 25, 18], [39, 38, 37, 36], [38, 32, 26, 20], [38, 33, 28, 23], [37, 31, 25, 19], [37, 32, 27, 22], [36, 30, 24, 18], [36, 31, 26, 21]
 
 ]
-// when clicking add move to an array 
-// inside your check win function you will be comparing players array with the win array 
-// use .include
-// if statement for players who won and lose
+
 
 function init() {
-gameBoard =[
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, null],
-
-]
+    gameBoard =[
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    [null, null, null, null, null, null],
+    ]
 render()
 }
+
+init()
+
+
+function render(){
+    // render the board
+    gameBoard.forEach((columnArray, indexColumn) => {
+        // Go over the columns to access the cells inside of them
+        columnArray.forEach((tileDiv, index) => {
+         // Select the tile base on it value
+            const tile = document.getElementById(`${indexColumn}${index}`); 
+            
+            tile.style.backgroundColor = color[tileDiv]
+            
+        })
+    })
+}
+
 /*----- cached element references -----*/
 const board = document.getElementById('board');
 reset = document.querySelector('#reset');
@@ -55,18 +74,21 @@ const places = document.getElementsByClassName('places');
 /*----- event listeners -----*/
 
 board.addEventListener('click', function(e){
-    /*console.log(e.target.tagName)*/
-
-if (e.target.tagName === 'DIV' && player){
-    e.target.style.backgroundColor ='red';
-}else if (e.target.tagName === 'DIV' && !player){
-    e.target.style.backgroundColor ='blue';
+     console.log(e.target.id)
+    let index = e.target.id 
+        index.toString().split()
+        console.log(index[0], 'this is the first character', index[1], 'this is the second character')
+        
+            if (player){
+                gameBoard[index[0]][index[1]] = 1
+            }else if (!player){
+                gameBoard[index[0]][index[1]] = -1
 }
 gameTotal++ 
+console.log(gameTotal)
 checkGameTurn()
-console.log(gameTotal, player)
+render()
 });
-
 
 
 document.querySelector('button')
@@ -89,19 +111,6 @@ function checkGameTurn(){
 // function render(){
 
 // }
-function checkWon(){
-    let squares =document.querySelectorAll(".board")
-    for (let y=0;y<winningArray.length;y++){
-    let square =winningArray[y]
-    if(square.every(q=>squares[q].classList.contains("player-one"))){
-      setTimeout(() =>alert("player one(red) wins "), 200)
-      setTimeout(() =>restart.style.display="flex", 500)
-      }else if(square.every(q=>squares[q].classList.contains("player-two"))){
-      setTimeout(() =>alert("player two(yellow) wins"), 200)
-      setTimeout(() =>restart.style.display="flex", 500)
-    }
-    }
-    }
 
 // counter % 2 returns true or false
 // 1 plaer 1 turn true if false player 2 turn
