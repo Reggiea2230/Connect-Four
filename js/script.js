@@ -10,6 +10,7 @@ let reset;
 let gameBoard;
 let gameTotal = 0;
 let winningWay = [
+
     [5, 10, 15, 20], [5, 11, 17, 23], [5, 4, 3, 2], [4, 3, 2, 1], [4, 9, 14, 19], [4, 10, 16, 22], [3, 2, 1, 0], [3, 8, 13, 18], [3, 9, 15, 21],
     [11, 10, 9, 8], [11, 16, 21, 26], [11, 17, 23, 29], [10, 9, 8, 7], [9, 14, 19, 24], [9, 8, 7, 6], [9, 15, 21, 27], [2, 8, 14, 20], 
     [1, 7, 13, 19], [0, 6, 12, 18], [8, 14, 20, 26], [7, 13, 19, 25], [6, 12, 18, 24], [17, 22, 27, 32], [17, 23, 29, 35], 
@@ -26,6 +27,10 @@ let winningWay = [
     [39, 33, 27, 21], [39, 32, 25, 18], [39, 38, 37, 36], [38, 32, 26, 20], [38, 33, 28, 23], [37, 31, 25, 19], [37, 32, 27, 22], [36, 30, 24, 18], [36, 31, 26, 21]
 
 ]
+// when clicking add move to an array 
+// inside your check win function you will be comparing players array with the win array 
+// use .include
+// if statement for players who won and lose
 
 function init() {
 gameBoard =[
@@ -51,8 +56,6 @@ const places = document.getElementsByClassName('places');
 
 board.addEventListener('click', function(e){
     /*console.log(e.target.tagName)*/
-
-
 
 if (e.target.tagName === 'DIV' && player){
     e.target.style.backgroundColor ='red';
@@ -80,6 +83,25 @@ function checkGameTurn(){
 //     let div =
 // }
 
+// function initGame(){
+
+// }
+// function render(){
+
+// }
+function checkWon(){
+    let squares =document.querySelectorAll(".board")
+    for (let y=0;y<winningArray.length;y++){
+    let square =winningArray[y]
+    if(square.every(q=>squares[q].classList.contains("player-one"))){
+      setTimeout(() =>alert("player one(red) wins "), 200)
+      setTimeout(() =>restart.style.display="flex", 500)
+      }else if(square.every(q=>squares[q].classList.contains("player-two"))){
+      setTimeout(() =>alert("player two(yellow) wins"), 200)
+      setTimeout(() =>restart.style.display="flex", 500)
+    }
+    }
+    }
 
 // counter % 2 returns true or false
 // 1 plaer 1 turn true if false player 2 turn
