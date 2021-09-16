@@ -24,13 +24,7 @@ h1 {
        margin: auto;
 }
 body{
-       background: url("https://www.mycwt.com/content/dam/vision/images/germany-images/CWT-Traveler/connect-2020-03/connect-2020-03-ua-01.jpg") no-repeat center center fixed; 
-       -webkit-background-size: cover;
-       -moz-background-size: cover;
-       -o-background-size: cover;
-       background-size: cover;
-       
-       
+       background: url("https://www.mycwt.com/content/dam/vision/images/germany-images/CWT-Traveler/connect-2020-03/connect-2020-03-ua-01.jpg") no-repeat center center fixed;             
 }
 #board {
      border: 5px solid; 
@@ -38,7 +32,7 @@ body{
      display: grid;
      grid-template-columns: repeat(7, 100px);
      grid-template-rows: 100px 100px 100px; 
-     width: 790px;
+     width: 780px;
      text-align: center;
      margin: auto;
      column-gap: 2%;
