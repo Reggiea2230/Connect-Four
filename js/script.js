@@ -5,14 +5,8 @@
 /*----- app's state (variables) -----*/
 let player;
 let winner;
-let playerTwo;
+let playeTwo;
 let reset;
-let gameBoard;
-let color = {
-    'null': 'white',
-    '1': 'red',
-   '-1': 'blue'
-}
 let gameTotal = 0;
 let winningWay = [
 
@@ -32,36 +26,23 @@ let winningWay = [
     [39, 33, 27, 21], [39, 32, 25, 18], [39, 38, 37, 36], [38, 32, 26, 20], [38, 33, 28, 23], [37, 31, 25, 19], [37, 32, 27, 22], [36, 30, 24, 18], [36, 31, 26, 21]
 
 ]
+// when clicking add move to an array 
+// inside your check win function you will be comparing players array with the win array 
+// use .include
+// if statement for players who won and lose
 
 
-function init() {
-    gameBoard =[
-    [null, null, null, null, null, null],
-    [null, null, null, null, null, null],
-    [null, null, null, null, null, null],
-    [null, null, null, null, null, null],
-    [null, null, null, null, null, null],
-    [null, null, null, null, null, null],
-    ]
-render()
-}
+let gameBoard =[
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
 
-init()
+]
 
 
-function render(){
-    // render the board
-    gameBoard.forEach((columnArray, indexColumn) => {
-        // Go over the columns to access the cells inside of them
-        columnArray.forEach((tileDiv, index) => {
-         // Select the tile base on it value
-            const tile = document.getElementById(`${indexColumn}${index}`); 
-            
-            tile.style.backgroundColor = color[tileDiv]
-            
-        })
-    })
-}
 
 /*----- cached element references -----*/
 const board = document.getElementById('board');
@@ -69,50 +50,65 @@ reset = document.querySelector('#reset');
 const startEl = document.querySelector('#start');
 const places = document.getElementsByClassName('places');
 
-
+board.addEventListener('click', function(e){
+   if (e.target.className == 'tile'){
+       movesLike(e)
+   }
+    
+});
 
 /*----- event listeners -----*/
 
-board.addEventListener('click', function(e){
-     console.log(e.target.id)
-    let index = e.target.id 
-        index.toString().split()
-        console.log(index[0], 'this is the first character', index[1], 'this is the second character')
-        
-            if (player){
-                gameBoard[index[0]][index[1]] = 1
-            }else if (!player){
-                gameBoard[index[0]][index[1]] = -1
+
+
+
+function movesLike(e){
+    
+    let idx = e.target.id
+    let y = Math.floor(idx / 6)
+    let x = idx % 6
+
+        if (e.target.tagName === 'DIV' && player){
+            e.target.style.backgroundColor ='red';
+            gameBoard[x][y] = 'red'
+            gameTotal++
+        }else if (e.target.tagName === 'DIV' && !player){
+            e.target.style.backgroundColor ='blue';
+            gameBoard[x][y] = 'blue'
+            gameTotal++
+        }
+        winnerWinner()
+        checkPlayer()
+        render()
 }
-gameTotal++ 
-console.log(gameTotal)
-checkGameTurn()
-render()
-});
 
 
-document.querySelector('button')
-	.addEventListener('click', reset);
+
 
 /*----- functions -----*/
 
-function checkGameTurn(){
-        return player = gameTotal % 2
+function initGame(){
+    render()
 }
-// when increment our  
+function render(){
+    console.log(gameBoard)
+}
+function checkPlayer(){
+    return player = gameTotal % 2
+  }
+  function winnerWinner(){
+    for (let i = 0; i < winningWay.length; i++){
+        for (let j = 0; j < 1; j++){
+            if (document.getElementById(`${winningWay[i][j]}`).style.backgroundColor != ''){
+                let a = document.getElementById(`${winningWay[i][j]}`).style.backgroundColor
+                let b = document.getElementById(`${winningWay[i][j + 1]}`).style.backgroundColor
+                let c = document.getElementById(`${winningWay[i][j + 2]}`).style.backgroundColor
+                let d = document.getElementById(`${winningWay[i][j + 3]}`).style.backgroundColor
 
-// //for (let i=0; i<41;i++){
-//     let div =
-// }
-
-// function initGame(){
-
-// }
-// function render(){
-
-// }
-
-// counter % 2 returns true or false
-// 1 plaer 1 turn true if false player 2 turn
-// define function that checks if its player 1 or not then figure out where to call 
-
+                if (a == b && b == c && c == d){
+                    results.innerHTML = 'Player wins'
+                }
+            }
+        }
+    }
+}

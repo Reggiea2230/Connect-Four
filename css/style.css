@@ -5,31 +5,48 @@
 
 h1 {
      text-align: center;
+     font-family: 'Covered By Your Grace', cursive;
+     font-size: 75px;
+     text-shadow: 2px 2px red;
   }
 
 #p1 {
+       font-size: 35px;
        float: left;
+       font-family: 'Covered By Your Grace', cursive;
 }
 #p2 {
+       font-size: 35px;
        float: right;
+       font-family: 'Covered By Your Grace', cursive;
 }
 #buttonTwo{
        margin: auto;
+}
+body{
+       background: url("https://www.mycwt.com/content/dam/vision/images/germany-images/CWT-Traveler/connect-2020-03/connect-2020-03-ua-01.jpg") no-repeat center center fixed; 
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       
+       
 }
 #board {
      border: 5px solid; 
      background-color: black;  
      display: grid;
-     grid-template-columns: repeat(6, 100px);
+     grid-template-columns: repeat(7, 100px);
      grid-template-rows: 100px 100px 100px; 
-    /* grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw;
-     grid-template-rows: 10vh 10vh 10vh 10vh 10vh 10vh; */
-     width: 820px;
+     width: 790px;
      text-align: center;
      margin: auto;
      column-gap: 2%;
 }
 
+#results{
+       text-align: center;
+}
 
 #colOne {
        grid-column: 1/2;
@@ -86,29 +103,3 @@ main {
       float: left
 }
 
-/*.blue {
-       background-color: rgb(255, 0, 0);
-       height: 35px;
-       border-radius: 50px;
-       display: inline-flex;
-       border: solid 1px;
-       width: 50px;
-}
-
-.red {
-       background-color: yellow;
-       height: 40px;
-       border-radius: 50px;
-       display: inline-flex;
-       border: solid 1px;
-       width: 50px;
-} */
-   
-   
- /*  
-#buttonOne {
-       float: left;
-}
-#buttonTwo {
-       
-}
