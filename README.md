@@ -27,4 +27,7 @@ Some of the future game enchanements I would apply to my game would be music, ho
 <img src="https://i.imgur.com/60k82hp.png">
 
 
+<<<<<<< HEAD
  
+=======
+>>>>>>> c7677f3c3d6ee45497319658aef59c4a5145be53
