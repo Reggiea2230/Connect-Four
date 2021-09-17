@@ -1,5 +1,5 @@
 # Connect-Four
-<<<<<<< HEAD
+
 <Connect Four>
 
 
