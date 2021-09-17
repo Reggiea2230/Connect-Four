@@ -1,4 +1,4 @@
-# Connect-Four
+# CONNECT FOUR
 
 <Connect Four>
 
